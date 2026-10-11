@@ -1,0 +1,16 @@
+# Python bytecode caches (generated automatically, never commit)
+__pycache__/
+*.py[cod]
+
+# Virtual environments (each developer creates their own)
+.venv/
+venv/
+
+# Test and tooling caches
+.pytest_cache/
+
+# Editor / OS clutter
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
