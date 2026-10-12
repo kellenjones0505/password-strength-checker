@@ -56,7 +56,8 @@ def compare(password):
     return {
         "sha256": (sha_first, sha_second),
         "bcrypt": (bcrypt_first, bcrypt_second),
-        "bcrypt_verifies": bcrypt_verify(password, bcrypt_first),
+        "bcrypt_verifies": bcrypt_verify(password, bcrypt_first)
+        and bcrypt_verify(password, bcrypt_second),
         "sha256_per_second": sha_speed,
         "bcrypt_per_second": bcrypt_speed,
     }
