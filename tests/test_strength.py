@@ -11,6 +11,7 @@ class LengthTests(unittest.TestCase):
         self.assertEqual(score_length("a" * 8)[0], 1)
         self.assertEqual(score_length("a" * 12)[0], 2)
         self.assertEqual(score_length("a" * 16)[0], 3)
+        self.assertEqual(score_length("a" * 20)[0], 4)
 
 
 class VarietyTests(unittest.TestCase):
@@ -46,12 +47,12 @@ class EvaluateTests(unittest.TestCase):
         self.assertEqual(result["rating"], "Very weak")
 
     def test_strong_password_gets_max_score(self):
-        result = evaluate("T7#qL9!vX2@mR4&z")
+        result = evaluate("T7#qL9!vX2@mR4&z!!Tte")
         self.assertEqual(result["score"], result["max_score"])
-        self.assertEqual(result["rating"], "Strong")
+        self.assertEqual(result["rating"], "Super strong")
 
     def test_result_never_contains_the_password(self):
-        password = "T7#qL9!vX2@mR4&z"
+        password = "T7#qL9!vX2@mR4&z!!Tte"
         self.assertNotIn(password, repr(evaluate(password)))
 
 
