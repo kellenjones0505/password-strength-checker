@@ -144,3 +144,7 @@ common_passwords.txt     Sample wordlist of common passwords
 tests/                   Unit tests (unittest)
 requirements.txt         Python dependencies
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
