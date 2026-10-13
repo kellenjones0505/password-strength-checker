@@ -9,7 +9,7 @@ handling, attacker-informed strength checks, and password-hashing best practices
 
 ## Features
 
-- **Strength scoring** (0–7) based on length and character variety, with
+- **Strength scoring** (0–8) based on length and character variety, with
   specific tips for improvement
 - **Common-password detection** against a wordlist, including variations like
   `Summer2024!` (base word `summer` plus a predictable suffix)
@@ -43,26 +43,26 @@ empty line to quit. **Use made-up passwords. Don't type real credentials into to
 ### Example output
 
 ```
-Strength: Strong  [#######] 7/7
-  - Great length (16+ characters).
+Strength: Super strong  [########] 8/8
+  - Fantastic length (20+ characters).
   - Uses all character types.
 
 How this password would be stored:
 
   SHA-256 (fast, unsalted -- NOT suitable for passwords)
-    hash #1: c707e34f3723a4c7c554d8c3d4a72c841142f2b5afd1e72178c1c099d67dd4d1
-    hash #2: c707e34f3723a4c7c554d8c3d4a72c841142f2b5afd1e72178c1c099d67dd4d1
+    hash #1: c39baee2e1fc5e113e32f3f0d07ef869d06df15d0c031c094ce14c1a1b18bf9a
+    hash #2: c39baee2e1fc5e113e32f3f0d07ef869d06df15d0c031c094ce14c1a1b18bf9a
     Same password -> same hash, so precomputed lookup tables work against it.
 
   bcrypt (slow, salted, cost factor 12)
-    hash #1: $2b$12$ZKwEqm4kl90CuTF/Gf8rauhLyr3jfKUlA/Tbi.S41hMLKYe0Z.AKu
-    hash #2: $2b$12$vZ2PS8fxnsV9OrvKkfpbuOsN86ljXJdZwZkpgGx5M3LgF7oMGJOeG
+    hash #1: $2b$12$MHjtJom9eoH16JnkB3ZR5OgpZgL3MzSZ/uh0VUK04rE9P8EnfwYJ2
+    hash #2: $2b$12$Aja0DX6Ve1dh3Kvjx/wXqumoWJnSaaBzWRTYS//hVNJzfmQE0kSEO
     A new random salt each time -> different hashes, yet both verify: True
 
   Guessing speed on this computer:
-    SHA-256: ~1,498,954 guesses/second
+    SHA-256: ~1,484,008 guesses/second
     bcrypt:  ~5.3 guesses/second
-    bcrypt makes a brute-force attack ~283,539x slower.
+    bcrypt makes a brute-force attack ~281,658x slower.
 ```
 
 ### Running the tests

@@ -12,7 +12,8 @@ COMMON_PASSWORDS_FILE = Path(__file__).with_name("common_passwords.txt")
 # Length is the single biggest factor in password strength: every extra
 # character multiplies the number of guesses an attacker has to make.
 LENGTH_THRESHOLDS = [
-    (16, 3, "Great length (16+ characters)."),
+    (20, 4, "Fantastic length (20+ characters)."),
+    (16, 3, "Great length (16-19 characters)."),
     (12, 2, "Good length (12-15 characters)."),
     (8, 1, "Okay length, but 12+ characters is much stronger."),
 ]
@@ -25,9 +26,11 @@ CHARACTER_CLASSES = {
     "symbols": set(string.punctuation + " "),
 }
 
-MAX_SCORE = 3 + len(CHARACTER_CLASSES)
+# The top length tier is worth the most points.
+MAX_SCORE = LENGTH_THRESHOLDS[0][1] + len(CHARACTER_CLASSES)
 
 LABELS = [
+    (8, "Super strong"),
     (6, "Strong"),
     (4, "Moderate"),
     (2, "Weak"),
