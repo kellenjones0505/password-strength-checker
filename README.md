@@ -1,5 +1,11 @@
 # Password Strength Checker
 
+[![Tests](https://github.com/kellenjones0505/password-strength-checker/actions/workflows/tests.yml/badge.svg)](https://github.com/kellenjones0505/password-strength-checker/actions/workflows/tests.yml)
+
+A command-line tool that rates...
+
+# Password Strength Checker
+
 A command-line tool that rates how strong a password is and shows, side by side,
 how that password would be stored using **SHA-256** versus **bcrypt**, with a
 live speed test that shows why bcrypt is the right choice for passwords.
@@ -21,7 +27,7 @@ handling, attacker-informed strength checks, and password-hashing best practices
 
 ## Getting started
 
-Requires Python 3.9+.
+Requires Python 3.10+.
 
 ```bash
 git clone https://github.com/kellenjones0505/password-strength-checker.git
